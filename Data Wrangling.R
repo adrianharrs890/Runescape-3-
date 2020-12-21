@@ -1,9 +1,6 @@
 rm(list = ls())
 options(scipen = 999)
-library(reticulate)
-py_install("")
-
-setwd("~/Desktop/rsdata/")
+setwd("YOUR WD")
 
 library(dplyr)
 library(tidyr)
@@ -26,7 +23,7 @@ gen = function(firstday, lastday){
   }
   return(space)
 }
-
+# Webscraped files daily for 95 days straight 
 # First day = 1 Last Day = Last Rs number in File 
 sample = gen(firstday = 1, lastday = 95)
 View(sample)
@@ -39,8 +36,6 @@ for (i in 1:length(sample)){
 }
 # Dates 
 date  = seq(as.Date("2020-08-16"), as.Date("2020-11-18"), by="days")
-
-tail(date)
 
 for(i in 1:length(date)){
   mylist[[i]]$date <- date[i]
@@ -76,9 +71,6 @@ ggplotly(p)
 # Corr
 ggpairs(check)
 
-# When I was switching back and worth 
-ab = check[,-c(1,4)]
-write.csv(ab,"whip.csv", row.names = FALSE)
 
 
 
