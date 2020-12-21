@@ -483,7 +483,7 @@ datasetq
 
 
 # exporting indiv
-datasetq.to_csv('Rs88')
+datasetq.to_csv('Rs95')
 
 
 # In[ ]:
